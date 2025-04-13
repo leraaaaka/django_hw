@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная - Idioms Project{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Добро пожаловать на сайт изучения английских идиом (B2–C2)</h1>
+<p>Выберите один из вариантов ниже для изучения новых идиом или проверки своих знаний.</p>
+
+<div class="row mt-5">
+  <!-- Блок 1: Случайная идиома -->
+  <div class="col-md-6 mb-3">
+    <div class="card text-center shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Случайная идиома</h5>
+        <p class="card-text">
+          Узнайте новую идиому.
+          <br>Нажмите, чтобы перейти.
+        </p>
+        <a href="{% url 'random_idiom' %}" class="btn btn-primary">Перейти</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Блок 2: Тест по идиомам -->
+  <div class="col-md-6 mb-3">
+    <div class="card text-center shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Тест по идиомам</h5>
+        <p class="card-text">
+          Проверьте свои знания с помощью викторины.
+          <br>Нажмите, чтобы начать тест.
+        </p>
+        <a href="{% url 'quiz' %}" class="btn btn-primary">Пройти тест</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

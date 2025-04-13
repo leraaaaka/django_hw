@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Случайная идиома{% endblock %}
+
+{% block content %}
+<h2>Случайная идиома</h2>
+
+{% if idiom %}
+  <div class="card mb-3" style="max-width: 600px;">
+    <div class="card-header">
+      <strong>{{ idiom.phrase }}</strong> <span class="badge bg-info">{{ idiom.level }}</span>
+    </div>
+    <div class="card-body">
+      <p><strong>Определение: </strong>{{ idiom.definition }}</p>
+      <p><strong>Пример: </strong>{{ idiom.example }}</p>
+      {% if idiom.translation %}
+        <p><strong>Перевод: </strong>{{ idiom.translation }}</p>
+      {% else %}
+        <p><em>(перевод не указан)</em></p>
+      {% endif %}
+    </div>
+  </div>
+  <a href="{% url 'random_idiom' %}" class="btn btn-primary">Обновить/Ещё</a>
+{% else %}
+  <p>{{ message }}</p>
+{% endif %}
+{% endblock %}
